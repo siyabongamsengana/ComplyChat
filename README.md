@@ -1,6 +1,6 @@
 ComplyChat is a private messaging app for compliance teams at a company.
 
-Think of it like WhatsApp, but only for the people whose job is to find and manage risks and make sure the company follows rules and laws (that's what "GRC" means — Governance, Risk, and Compliance).
+Think of it like WhatsApp, but only for the people whose job is to find and manage risks and make sure the company follows rules and laws; Governance, Risk, and Compliance professionals.
 
 Who uses it:
 
