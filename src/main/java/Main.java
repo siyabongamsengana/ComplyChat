@@ -9,36 +9,49 @@ public class Main {
     //DECLARATIONS 
     Login LLogin = new Login();
     
-
-// Taking Username
+// Username
 String usernameInput;
 
 do {
-    System.out.println("Welcome to ComplyChat");
     System.out.println("Enter a username of your own desire");
     usernameInput = input.nextLine();
+
+    if (!LLogin.checkUserName(usernameInput)) {
+        System.out.println("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.");
+    }
+
 } while (!LLogin.checkUserName(usernameInput));
 
 LLogin.setEnteredUsername(usernameInput);
 
 
-// Taking Password
+// Password
 String PasswordInput;
 
 do {
     System.out.println("Enter a Strong Password");
     PasswordInput = input.nextLine();
+
+    if (!LLogin.checkPasswordComplexity(PasswordInput)) {
+        System.out.println("Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.");
+    }
+
 } while (!LLogin.checkPasswordComplexity(PasswordInput));
 
 LLogin.setEnteredPassword(PasswordInput);
 
 
-// Taking Cell Phone Number
+// Cell Phone Number
 String CellPhoneNumberInput;
 
 do {
     System.out.println("Enter your Cell Phone Number");
     CellPhoneNumberInput = input.nextLine();
+
+    if (!LLogin.checkCellPhoneNumber(CellPhoneNumberInput)) {
+        System.out.println("Cell number is incorrectly formatted or does not contain an international code; please correct the number and try again.");
+    }
+
 } while (!LLogin.checkCellPhoneNumber(CellPhoneNumberInput));
 
 LLogin.setEnteredCellPhoneNumber(CellPhoneNumberInput);
@@ -47,7 +60,6 @@ LLogin.setEnteredCellPhoneNumber(CellPhoneNumberInput);
 // Registration
 String result = LLogin.registerUser();
 System.out.println(result);
-
     
  
     
