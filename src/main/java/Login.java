@@ -120,7 +120,7 @@ UserName = EnteredUserName;
 Password = EnteredPassword;
 CellPhoneNumber = EnteredCellPhoneNumber;
 
-return "Welcome to ComplyChat";
+return "Welcome back to ComplyChat; Enter your detail to Login";
 }
 
 
@@ -128,6 +128,8 @@ return "Welcome to ComplyChat";
 public String returnLoginStatus(){
     if(loginUser()){
         return "Welcome back " + UserName;
+    } else if (LimitReached == true) {
+        return "Account locked due to too many incorrect login attempts.";
     } else { 
         return "Username or password incorrect, please try again.";
     }
@@ -153,6 +155,10 @@ public void setEnteredCellPhoneNumber(String CellPhoneNumber ) {
 //Role  method to be called 
 public void setEnteredRole(String Role ) {
    EnteredRole = Role;
+}
+
+public boolean getLimitReached() {
+    return LimitReached;
 }
   
 //Geting if the User is regsterd or not 

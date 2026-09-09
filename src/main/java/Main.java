@@ -10,38 +10,51 @@ public class Main {
     Login LLogin = new Login();
     
 
-    //Loops if user is not yet registerd 
-    while (!LLogin.getRegistered()) {
-   
-    //TAKING IN USER INPUT 
-    //Username Input 
+// Taking Username
+String usernameInput;
+
+do {
+    System.out.println("Welcome to ComplyChat");
     System.out.println("Enter a username of your own desire");
-    String usernameInput = input.nextLine();
-    LLogin.setEnteredUsername(usernameInput);
+    usernameInput = input.nextLine();
+} while (!LLogin.checkUserName(usernameInput));
+
+LLogin.setEnteredUsername(usernameInput);
+
+
+// Taking Password
+String PasswordInput;
+
+do {
+    System.out.println("Enter a Strong Password");
+    PasswordInput = input.nextLine();
+} while (!LLogin.checkPasswordComplexity(PasswordInput));
+
+LLogin.setEnteredPassword(PasswordInput);
+
+
+// Taking Cell Phone Number
+String CellPhoneNumberInput;
+
+do {
+    System.out.println("Enter your Cell Phone Number");
+    CellPhoneNumberInput = input.nextLine();
+} while (!LLogin.checkCellPhoneNumber(CellPhoneNumberInput));
+
+LLogin.setEnteredCellPhoneNumber(CellPhoneNumberInput);
+
+
+// Registration
+String result = LLogin.registerUser();
+System.out.println(result);
+
     
-    //Taking in Password
-       System.out.println("Enter a Strong Password");
-       String PasswordInput = input.nextLine();
-       LLogin.setEnteredPassword(PasswordInput);
-       
-    //Taking in Cell Phone Number 
-       System.out.println("Enter your Cell Phone Number");
-       String CellPhoneNumberInput = input.nextLine();
-       LLogin.setEnteredCellPhoneNumber(CellPhoneNumberInput);
-    
-    //Taking in Users Role
-       System.out.println("Enter your Role: Analyst/Reviewer/Admin");
-       String RoleInput = input.nextLine();
-       LLogin.setEnteredRole(RoleInput);
-    
-    //Registration Logic
-    String result = LLogin.registerUser();
-    System.out.println(result);
-    
- } 
+ 
     
    //Login into the App Logic
    //Taking their username 
+   while (!LLogin.getLimitReached()) {
+   
     System.out.println("Welcome back; Enter your User name");
     String usernameLogin = input.nextLine();
     LLogin.setEnteredUsername(usernameLogin);
@@ -61,4 +74,5 @@ public class Main {
 
 }
         
+    }
 }
