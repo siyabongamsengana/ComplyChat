@@ -1,4 +1,3 @@
-
 public class Login {
     // What I will be capturing from the user
     // Declarations
@@ -18,6 +17,7 @@ public class Login {
     /*Loged in Status to ensure they dont bypass
     the login requirements*/
     private boolean Registered = false;
+    private boolean LoggedIn = false;
     
     //Rate limiting to prevent Brute Force attacks
     private int Limit =0;
@@ -33,6 +33,7 @@ public class Login {
     
     if (UserName.equals(EnteredUserName) && Password.equals(EnteredPassword)) {
         LoginApp = true;
+        LoggedIn = true;
     //Limit is Re-set as the user logged in
         Limit = 0;
      //Increment every time the user is entering wrong credentials   
@@ -119,6 +120,7 @@ Registered = true;
 UserName = EnteredUserName;
 Password = EnteredPassword;
 CellPhoneNumber = EnteredCellPhoneNumber;
+Role = EnteredRole;
 
 return "Welcome back to ComplyChat; Enter your detail to Login";
 }
@@ -167,12 +169,21 @@ public boolean getRegistered() {
     return Registered; 
     }
 
+//Geting if the User is logged in or not 
+public boolean getLoggedIn() {
+    return LoggedIn;
+}
 
-
-
-
-
-
-
+//Geting the GRC role the user registered with 
+public String getRole() {
+    return Role;
+}
 
 }
+
+
+
+
+
+
+
