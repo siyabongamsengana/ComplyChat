@@ -10,6 +10,7 @@ public class MessageTest {
 String recipient1 = "+27718693002";
 String text1 = "Hi Mike, can you join us for dinner tonight?";
 //Message 2
+String recipient2 = "08575975889";
 String text2 = "Hi Keegan, did you receive the payment?";
 
 //Message length: 250 characters or fewer should be ready to send
