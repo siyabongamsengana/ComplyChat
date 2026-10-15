@@ -158,7 +158,7 @@ do {
     text = input.nextLine();
     lengthResult = msg.checkMessageLength(text);
     System.out.println(lengthResult);
-} while (!lengthResult.equals("Message has the correct length."));
+}  while (!lengthResult.equals("Message ready to send."));
   
 //Putting/geting a hash a Hash in the text and the unique user ID 
 String hash = msg.createMessageHash(id, messagesEntered, text);

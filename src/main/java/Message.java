@@ -70,11 +70,11 @@ public String generateMessageID() {
 public String SentMessage(int choice) {
 
     if (choice == 1) {
-        return "Message sent";
+        return "Message successfully sent.";
     } else if (choice == 2) {
-        return "Press 0 to delete the message";
+        return "Press 0 to delete the message.";
     } else {
-        return "Message stored";
+        return "Message successfully stored.";
     }
 }
 
@@ -101,7 +101,8 @@ public void addSentMessage(String messageId, String hash, String recipient, Stri
 public String checkMessageLength(String text) {
 
     if (text.length() <= 250) {
-        return "Message has the correct length.";
+    
+    return "Message ready to send.";
     } else {
         return "Message exceeds 250 characters by " + (text.length() - 250) + "; please reduce the size.";
     }
